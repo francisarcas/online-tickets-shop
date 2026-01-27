@@ -1,0 +1,481 @@
+:root {
+    --background-color: #f4f4f4;
+    --background-color-nav: #333;
+    --background-color-months: #eaeaea;
+    --primary-text-color: #333;
+    --secondary-text-color: #777;
+    --accent-color: #909090;
+    --hover-accent-color: #0056b3;
+    --container-background: #ffffff;
+    --event-background: #ffffff;
+    --button-background: #333;
+    --button-hover-background: #415264;
+    --badge-background: #f44336;
+    --background-image: url('../images/bg.jpg');
+    --search-button-color: #333;
+}
+
+
+body.dark-mode {
+    --background-color: #1e1e1e;
+    --background-color-nav:#333;
+    --background-color-months: #3b3b3b;
+    --primary-text-color: #eaeaea;
+    --secondary-text-color: #b0b0b0;
+    --accent-color: #909090;
+    --hover-accent-color: #0066cc;
+    --container-background: #1b1b1b;
+    --event-background: #363636;
+    --button-background: #252525;
+    --button-hover-background: #505050;
+    --badge-background: #d9534f;
+    --background-image: url('../images/bg-dark.jpg');
+    --search-button-color: #525252;
+}
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    background-image: var(--background-image);
+    background-repeat: repeat;
+    background-size: 5%; /* Set the width and height of the background image */
+}
+
+/* Logo Styling */
+.logo-container {
+    position: fixed;
+    top: 40px; /* Adjust margin from top */
+    left: 100px; /* Adjust margin from left */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.logo-container img {
+    width: 120px; /* Adjust logo size */
+    height: auto;
+    transition: opacity 0.3s ease; /* Smooth transition for any changes */
+}
+
+
+/* CONTAINERS*/
+
+.featured-events-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    background: none;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+}
+
+
+
+/* TOGGLE DARK MODE */
+.toggle-switch-darklightmode {
+    position: fixed;
+    top: 20px; /* Adjust margin from top */
+    right: 20px; /* Adjust margin from right */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-switch-darklightmode input {
+    display: none;
+}
+
+.toggle-switch-darklightmode label {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch-darklightmode label::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch-darklightmode input:checked + label {
+    background-color: #666; /* Adjusted for dark mode */
+}
+
+.toggle-switch-darklightmode input:checked + label::before {
+    transform: translateX(20px);
+}
+
+
+
+
+
+/* SEARCH BAR */
+
+.search-bar {
+    width: 650px;
+    color: var(--primary-text-color);
+    box-shadow: 0 0 5px hsl(0, 0%, 78%);
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.6rem;
+    margin: 5% auto 5%;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.search-bar div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    position: relative;
+    padding: 0 10px;
+}
+
+.search-bar div input {
+    background: none;
+    border: none;
+    padding: 0.2rem 0 0 0;
+    font-size: 0.8rem;
+    width: 100%;
+    margin-bottom: 5%;
+    color: var(--primary-text-color);
+}
+
+.search-bar div input:focus {
+    outline: none;
+}
+
+::placeholder {
+    font-size: 0.75rem;
+}
+
+.search-bar span {
+    display: flex;
+    align-items: centre;
+    justify-content: centre;
+    background: var(--search-button-color);
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+
+
+/* SLIDESHOW INDEX FEATURED */
+
+.slideshow-container {
+    max-width: 1200px;
+    height: 400px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideshow-container .prev,
+.slideshow-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.slideshow-container .prev {
+    left: 0;
+}
+
+.slideshow-container .next {
+    right: 0;
+}
+
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots {
+    text-align: center;
+    padding: 0 0;
+}
+
+.dots span {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dots span.active {
+    background-color: #717171;
+}
+
+
+
+
+/* FEATURED SECTION */
+
+/* EVENTS TILES */
+
+.event-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.event-item {
+    width: 18%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--event-background);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.event-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.event-item:hover img {
+    transform: scale(1.1);
+}
+.event-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.event-info h3 {
+    margin: 10px 0;
+    color: var(--primary-text-color);
+    font-size: 18px;
+}
+
+.event-info p {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+}
+
+.event-info .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-background);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.event-info .btn:hover {
+    background-color: #415264;
+}
+
+.event-item .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--badge-background);
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+/* COUNTDOWN FEATURED TILES */
+
+.countdown {
+    font-size: 16px;
+    color: #ff5733;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* FOOTER */
+
+footer {
+    background: var(--container-background);
+    padding: 10px;
+    margin-top: 40px;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+} 
+
+
+
+
+/* EVENTS PAGE */
+
+nav {
+    background-color: var(--background-color-nav);
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+nav a {
+    color: white; /* Default text colour */
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+
+nav a:visited {
+    color: var(--primary-text-color);
+}
+nav a:hover {
+    text-decoration: underline;
+}
+/* Dropdown styles */
+nav .submenu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 100%; /* Directly below the link */
+    left: 0;
+    width: 180px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 10;
+    padding-bottom: 20%;
+    padding-top: 30%;
+}
+nav .submenu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+}
+nav .submenu a:hover {
+    background-color: var(--button-hover-background);
+    border-radius: 5px;
+}
+/* Ensures submenu shows when hovering over the parent <a> or submenu */
+nav .submenu-wrapper:hover .submenu {
+    display: block;
+}
+
+nav .submenu-wrapper {
+    display: inline-block; /* To ensure submenu is inline with its anchor */
+    position: relative; /* Position relative to its parent anchor */
+}
+
+/* TABLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    
+}
+
+th {
+    background-color: var(--button-background);    
+}
+
+tbody {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden; /* Ensures the corners are clipped correctly */
+}
+tr:nth-child(even) {
+    background-color: var(--event-background);
+}
+.month-section {
+    margin-top: 30px;
+}
+.month-section h2 {
+    background-color: var(--background-color-months);
+    padding: 10px;
+    border-radius: 5px;
+}
+.flag {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.event-list-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    background: none;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+}

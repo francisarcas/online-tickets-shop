@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    
+</head>
+<body>
+    <div class="logo-container">
+        <img id="logo" src="./images/logo/light/light.png" alt="Logo">
+    </div>
+    
+    <div class="toggle-switch-darklightmode" id="darkModeToggle">
+        <input type="checkbox" id="darkModeCheckbox">
+        <label for="darkModeCheckbox"></label>
+    </div>
+    
+
+    <div class="search-bar">
+        <div class="location">
+            <p>Location</p>
+            <input type="text" placeholder="Where are you going?" id="location-input" autocomplete="off">
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="check-in">
+            <p>Date</p>
+            <input type="text" placeholder="Select the date" id="date-input" onclick="showCalendar()">
+        </div>
+        <div class="type">
+            <p>Type</p>
+            <input type="text" placeholder="What'd you like to do?" id="type-input">
+        </div>
+        <span><i class="fas fa-search"></i></span>
+    </div>
+
+
+
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="images/slide1.jpg" alt="Slide 1">
+        </div>
+        <div class="slides">
+            <img src="images/slide2.jpg" alt="Slide 2">
+        </div>
+        <div class="slides">
+            <img src="images/slide3.jpg" alt="Slide 3">
+        </div>
+        <div class="slides">
+            <img src="images/slide4.jpg" alt="Slide 4">
+        </div>
+        <div class="slides">
+            <img src="images/slide5.jpg" alt="Slide 5">
+        </div>
+        <div class="slides">
+            <img src="images/slide6.jpg" alt="Slide 6">
+        </div>
+    </div>
+
+    <div class="dots">
+        <span onclick="currentSlide(1)"></span>
+        <span onclick="currentSlide(2)"></span>
+        <span onclick="currentSlide(3)"></span>
+        <span onclick="currentSlide(4)"></span>
+        <span onclick="currentSlide(5)"></span>
+        <span onclick="currentSlide(6)"></span>
+    </div>
+
+
+
+    <div class="featured-events-container">
+        <h1>Featured Events</h1>
+        
+        <div class="event-row">
+            <div class="event-item">
+                <img src="images/featuredevent002.jpg" alt="Event 1">
+                <div class="badge">Last Few</div>
+                <div class="event-info">
+                    <div class="countdown" id="countdown1"></div>
+                    <h3>Marathon Mania</h3>
+                    <p>Join the thrilling marathon in London with a distance of 42 km.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="event-item">
+                <img src="images/featuredevent002.jpg" alt="Event 2">
+                <div class="event-info">
+                    <div class="countdown" id="countdown2"></div>
+                    <h3>Cycle Champs</h3>
+                    <p>Experience the adrenaline rush of a 120 km cycling event in Paris.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="event-item">
+                <img src="images/featuredevent002.jpg" alt="Event 3">
+                <div class="event-info">
+                    <div class="countdown" id="countdown3"></div>
+                    <h3>Trail Challenge</h3>
+                    <p>Run through scenic trails in the Swiss Alps with a 25 km course.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="event-item">
+                <img src="images/featuredevent002.jpg" alt="Event 4">
+                <div class="badge">New</div>
+                <div class="event-info">
+                    <div class="countdown" id="countdown4"></div>
+                    <h3>Windmill Ride</h3>
+                    <p>Take on the 80 km cycling adventure through the windmills of Amsterdam.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="event-item">
+                <img src="images/featuredevent002.jpg" alt="Event 5">
+                <div class="event-info">
+                    <div class="countdown" id="countdown5"></div>
+                    <h3>City Dash</h3>
+                    <p>Run 10 km through the streets of Berlin and conquer the urban challenge.</p>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Events Inc. | <a href="#">Terms & Conditions</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <script src="script/search-bar-calendar.js"></script>
+    <script src="script/featured-tiles-coundown.js"></script>
+    <script src="script/featured-slideshow.js"></script>
+    <script src="script/darkmode.js"></script>
+
+</body>
+</html>

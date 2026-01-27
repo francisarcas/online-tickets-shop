@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <script>
+        function filterEvents(kind) {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                if (kind === 'all' || row.dataset.kind === kind) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="logo-container">
+        <img id="logo" src="./images/logo/light/light.png" alt="Logo">
+    </div>
+    
+    <div class="toggle-switch-darklightmode" id="darkModeToggle">
+        <input type="checkbox" id="darkModeCheckbox">
+        <label for="darkModeCheckbox"></label>
+    </div>
+
+
+    <div class="event-list-container">
+        <h1>Your Next Events</h1>
+        <nav>
+            <a href="#" onclick="filterEvents('all')">All</a>
+            <div class="submenu-wrapper">
+                <a href="#" onclick="filterEvents('Running')"><i class="fa-solid fa-person-running"></i> Running</a>
+                <div class="submenu">
+                    <a href="#" onclick="filterEvents('Running')">Park Run</a>
+                    <a href="#" onclick="filterEvents('Running')">Trail</a>
+                    <a href="#" onclick="filterEvents('Running')">1 mile</a>
+                    <a href="#" onclick="filterEvents('Running')">5k</a>
+                    <a href="#" onclick="filterEvents('Running')">10k</a>
+                    <a href="#" onclick="filterEvents('Running')">Half 21.1k</a>
+                    <a href="#" onclick="filterEvents('Running')">Marathon 42k</a>
+                    <a href="#" onclick="filterEvents('Running')">Ultra</a>
+                </div>
+            </div>
+            <a href="#" onclick="filterEvents('Cycling')"><i class="fa-solid fa-bicycle"></i> Cycling</a>
+        </nav>
+
+        <div class="month-section">
+            <h2>March 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Name of the Event</th>
+                        <th>Distance</th>
+                        <th>Kind</th>
+                        <th>Date</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-kind="Running">
+                        <td><img src="https://flagcdn.com/w320/gb.png" alt="UK Flag" class="flag">London</td>
+                        <td>Marathon Mania</td>
+                        <td>42 km</td>
+                        <td>Running</td>
+                        <td>15/03/25</td>
+                        <td><a href="#">Book Now</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month-section">
+            <h2>April 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Name of the Event</th>
+                        <th>Distance</th>
+                        <th>Kind</th>
+                        <th>Date</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-kind="Cycling">
+                        <td><img src="https://flagcdn.com/w320/fr.png" alt="France Flag" class="flag">Paris</td>
+                        <td>Cycle Champs</td>
+                        <td>120 km</td>
+                        <td>Cycling</td>
+                        <td>22/04/25</td>
+                        <td><a href="#">Book Now</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month-section">
+            <h2>May 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Name of the Event</th>
+                        <th>Distance</th>
+                        <th>Kind</th>
+                        <th>Date</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-kind="Running">
+                        <td><img src="https://flagcdn.com/w320/de.png" alt="Germany Flag" class="flag">Berlin</td>
+                        <td>City Dash</td>
+                        <td>10 km</td>
+                        <td>Running</td>
+                        <td>30/05/25</td>
+                        <td><a href="#">Book Now</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="month-section">
+            <h2>June 2025</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Name of the Event</th>
+                        <th>Distance</th>
+                        <th>Kind</th>
+                        <th>Date</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-kind="Cycling">
+                        <td><img src="https://flagcdn.com/w320/nl.png" alt="Netherlands Flag" class="flag">Amsterdam</td>
+                        <td>Windmill Ride</td>
+                        <td>80 km</td>
+                        <td>Cycling</td>
+                        <td>18/06/25</td>
+                        <td><a href="#">Book Now</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2025 Events Inc. | <a href="#">Terms & Conditions</a> | <a href="#">Contact Us</a></p>
+    </footer>
+    <script src="script/search-bar-calendar.js"></script>
+    <script src="script/featured-tiles-coundown.js"></script>
+    <script src="script/featured-slideshow.js"></script>
+    <script src="script/darkmode.js"></script>
+</body>
+</html>

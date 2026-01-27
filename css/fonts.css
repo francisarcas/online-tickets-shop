@@ -1,0 +1,28 @@
+/* FONTS STYLE*/
+
+h1 {
+    text-align: center;
+    color: var(--primary-text-color);
+    margin-bottom: 30px;
+}
+h2 {
+    text-align: left;
+    font-size: 20px;
+    color: var(--primary-text-color);
+    margin-bottom: 30px;
+}
+
+th {
+    text-align: left;
+    color: white;
+}
+
+td {
+    text-align: left;
+    color: var(--primary-text-color);
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
