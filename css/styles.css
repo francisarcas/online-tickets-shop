@@ -963,3 +963,313 @@ tr:nth-child(even) {
         height: 240px;
     }
 }
+
+
+
+
+
+
+/* ─── Events Page — Hero ─────────────────────────────────── */
+.event-list-hero {
+    margin-bottom: 36px;
+}
+
+.event-list-hero h1 {
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+
+.event-list-hero p {
+    color: var(--secondary-text-color);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ─── Filter Bar ─────────────────────────────────────────── */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 30px;
+    background: var(--container-background);
+    color: var(--primary-text-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+    background: var(--button-background);
+    color: #ffffff;
+    border-color: var(--button-background);
+}
+
+body.dark-mode .filter-btn {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .filter-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.filter-btn .chevron {
+    font-size: 0.65rem;
+    margin-left: 2px;
+    transition: transform 0.2s ease;
+}
+
+/* Filter dropdown */
+.filter-dropdown-wrapper {
+    position: relative;
+}
+
+.filter-dropdown-wrapper:hover .filter-btn .chevron {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 180px;
+    background: var(--container-background);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    z-index: 50;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.filter-dropdown-wrapper:hover .filter-dropdown {
+    display: block;
+}
+
+.filter-dropdown a {
+    display: block;
+    padding: 9px 18px;
+    font-size: 0.85rem;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+.filter-dropdown a:hover {
+    background: var(--background-color);
+}
+
+/* ─── Month Section ──────────────────────────────────────── */
+.month-section {
+    margin-top: 36px;
+}
+
+.month-section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    background: none;
+    padding: 0 0 10px;
+    margin: 0 0 0;
+    border-bottom: 2px solid var(--background-color-months);
+}
+
+.month-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.month-year {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+}
+
+/* ─── Events Table ───────────────────────────────────────── */
+.events-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin-top: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    background: var(--container-background);
+}
+
+thead tr {
+    background: var(--button-background);
+}
+
+th {
+    padding: 12px 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 16px;
+    font-size: 0.875rem;
+    color: var(--primary-text-color);
+    border-bottom: 1px solid var(--background-color-months);
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+    background: var(--background-color-months);
+}
+
+/* City cell with flag */
+.city-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.flag {
+    width: 22px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Event name bold */
+.event-name {
+    font-weight: 600;
+}
+
+/* Type pills */
+.type-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.type-pill.running {
+    background: rgba(255, 87, 51, 0.12);
+    color: #e84c2b;
+}
+
+.type-pill.cycling {
+    background: rgba(33, 150, 243, 0.12);
+    color: #1976d2;
+}
+
+body.dark-mode .type-pill.running {
+    background: rgba(255, 87, 51, 0.2);
+    color: #ff7f5e;
+}
+
+body.dark-mode .type-pill.cycling {
+    background: rgba(33, 150, 243, 0.2);
+    color: #64b5f6;
+}
+
+/* Book Now button in table */
+.table-btn {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--button-background);
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.table-btn:hover {
+    background: var(--button-hover-background);
+}
+
+/* ─── Event List Container ───────────────────────────────── */
+.event-list-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+/* ─── Mobile — Events Page ───────────────────────────────── */
+@media (max-width: 768px) {
+
+    .event-list-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .filter-bar {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 7px 14px;
+        font-size: 0.8rem;
+    }
+
+    th {
+        font-size: 0.7rem;
+        padding: 10px 12px;
+    }
+
+    td {
+        font-size: 0.8rem;
+        padding: 12px 12px;
+    }
+
+    /* Hide distance column on small screens */
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Also hide type column on very small screens */
+    th:nth-child(4),
+    td:nth-child(4) {
+        display: none;
+    }
+}
