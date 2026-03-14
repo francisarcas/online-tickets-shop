@@ -2,62 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Index</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/fonts.css">
-    
 </head>
 <body>
-    <div class="logo-container">
-        <img id="logo" src="./images/logo/light/light.png" alt="Logo">
-    </div>
-    
-    <div class="toggle-switch-darklightmode" id="darkModeToggle">
-        <input type="checkbox" id="darkModeCheckbox">
-        <label for="darkModeCheckbox"></label>
-    </div>
-    
 
-    <div class="search-bar">
-        <div class="location">
-            <p>Location</p>
-            <input type="text" placeholder="Where are you going?" id="location-input" autocomplete="off">
-            <div class="suggestions" id="suggestions"></div>
+    <!-- STICKY HEADER -->
+    <header class="sticky-header" id="stickyHeader">
+
+        <div class="logo-container">
+            <img id="logo" src="./images/logo/light/light.png" alt="Logo">
         </div>
-        <div class="check-in">
-            <p>Date</p>
-            <input type="text" placeholder="Select the date" id="date-input" onclick="showCalendar()">
+
+        <div class="search-bar">
+            <div class="location">
+                <p>Location</p>
+                <input type="text" placeholder="Where are you going?" id="location-input" autocomplete="off">
+                <div class="suggestions" id="suggestions"></div>
+            </div>
+            <div class="check-in">
+                <p>Date</p>
+                <input type="text" placeholder="Select date" id="date-input" onclick="showCalendar()">
+            </div>
+            <div class="type">
+                <p>Type</p>
+                <input type="text" placeholder="Activity" id="type-input">
+            </div>
+            <span><i class="fas fa-search"></i></span>
         </div>
-        <div class="type">
-            <p>Type</p>
-            <input type="text" placeholder="What'd you like to do?" id="type-input">
+
+        <div class="toggle-switch-darklightmode" id="darkModeToggle">
+            <input type="checkbox" id="darkModeCheckbox">
+            <label for="darkModeCheckbox"></label>
         </div>
-        <span><i class="fas fa-search"></i></span>
-    </div>
 
+    </header>
 
-
+    <!-- SLIDESHOW -->
     <div class="slideshow-container">
-        <div class="slides">
-            <img src="images/slide1.jpg" alt="Slide 1">
-        </div>
-        <div class="slides">
-            <img src="images/slide2.jpg" alt="Slide 2">
-        </div>
-        <div class="slides">
-            <img src="images/slide3.jpg" alt="Slide 3">
-        </div>
-        <div class="slides">
-            <img src="images/slide4.jpg" alt="Slide 4">
-        </div>
-        <div class="slides">
-            <img src="images/slide5.jpg" alt="Slide 5">
-        </div>
-        <div class="slides">
-            <img src="images/slide6.jpg" alt="Slide 6">
-        </div>
+        <div class="slides"><img src="images/slide1.jpg" alt="Slide 1"></div>
+        <div class="slides"><img src="images/slide2.jpg" alt="Slide 2"></div>
+        <div class="slides"><img src="images/slide3.jpg" alt="Slide 3"></div>
+        <div class="slides"><img src="images/slide4.jpg" alt="Slide 4"></div>
+        <div class="slides"><img src="images/slide5.jpg" alt="Slide 5"></div>
+        <div class="slides"><img src="images/slide6.jpg" alt="Slide 6"></div>
     </div>
 
     <div class="dots">
@@ -69,15 +60,55 @@
         <span onclick="currentSlide(6)"></span>
     </div>
 
+    <!-- ORGANISER LOGOS CAROUSEL -->
+    <div class="organiser-carousel-section">
+        <p class="organiser-label">Trusted by leading organisers</p>
+        <div class="organiser-carousel-track-wrapper">
+            <div class="organiser-carousel-track">
+                <div class="organiser-logo-item"><img src="images/logos/tmc.png" alt="TMC"></div>
+                <div class="organiser-logo-item"><img src="images/logos/lme.png" alt="LME"></div>
+                <div class="organiser-logo-item"><img src="images/logos/great-run.png" alt="Great Run"></div>
+                <div class="organiser-logo-item"><img src="images/logos/parkrun.png" alt="Parkrun"></div>
+                <div class="organiser-logo-item"><img src="images/logos/run-through.png" alt="Run Through"></div>
+                <div class="organiser-logo-item"><img src="images/logos/rat-race.png" alt="Rat Race"></div>
+                <div class="organiser-logo-item"><img src="images/logos/challenge-family.png" alt="Challenge Family"></div>
+                <div class="organiser-logo-item"><img src="images/logos/ironman.png" alt="Ironman"></div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="organiser-logo-item"><img src="images/logos/tmc.png" alt="TMC"></div>
+                <div class="organiser-logo-item"><img src="images/logos/lme.png" alt="LME"></div>
+                <div class="organiser-logo-item"><img src="images/logos/great-run.png" alt="Great Run"></div>
+                <div class="organiser-logo-item"><img src="images/logos/parkrun.png" alt="Parkrun"></div>
+                <div class="organiser-logo-item"><img src="images/logos/run-through.png" alt="Run Through"></div>
+                <div class="organiser-logo-item"><img src="images/logos/rat-race.png" alt="Rat Race"></div>
+                <div class="organiser-logo-item"><img src="images/logos/challenge-family.png" alt="Challenge Family"></div>
+                <div class="organiser-logo-item"><img src="images/logos/ironman.png" alt="Ironman"></div>
+            </div>
+        </div>
+    </div>
 
-
+    <!-- FEATURED EVENTS -->
     <div class="featured-events-container">
         <h1>Featured Events</h1>
-        
         <div class="event-row">
+
             <div class="event-item">
-                <img src="images/featuredevent002.jpg" alt="Event 1">
+                <div class="event-img-wrapper">
+                    <img src="images/featuredevent002.jpg" alt="Event 1">
+                </div>
                 <div class="badge">Last Few</div>
+
+                <div class="event-organiser">
+                    <img src="images/logos/tmc.png" alt="TMC">
+                    <div class="event-organiser-info">
+                        <span>Organised by</span>
+                        <strong>TMC Events</strong>
+                    </div>
+                </div>
+
+                <div class="event-title-strip">
+                    <h3>Marathon Mania</h3>
+                </div>
+
                 <div class="event-info">
                     <div class="countdown" id="countdown1"></div>
                     <h3>Marathon Mania</h3>
@@ -85,8 +116,24 @@
                     <a href="#" class="btn">Book Now</a>
                 </div>
             </div>
+
             <div class="event-item">
-                <img src="images/featuredevent002.jpg" alt="Event 2">
+                <div class="event-img-wrapper">
+                    <img src="images/featuredevent002.jpg" alt="Event 2">
+                </div>
+
+                <div class="event-organiser">
+                    <img src="images/logos/lme.png" alt="LME">
+                    <div class="event-organiser-info">
+                        <span>Organised by</span>
+                        <strong>LME Sports</strong>
+                    </div>
+                </div>
+
+                <div class="event-title-strip">
+                    <h3>Cycle Champs</h3>
+                </div>
+
                 <div class="event-info">
                     <div class="countdown" id="countdown2"></div>
                     <h3>Cycle Champs</h3>
@@ -94,8 +141,24 @@
                     <a href="#" class="btn">Book Now</a>
                 </div>
             </div>
+
             <div class="event-item">
-                <img src="images/featuredevent002.jpg" alt="Event 3">
+                <div class="event-img-wrapper">
+                    <img src="images/featuredevent002.jpg" alt="Event 3">
+                </div>
+
+                <div class="event-organiser">
+                    <img src="images/logos/great-run.png" alt="Great Run">
+                    <div class="event-organiser-info">
+                        <span>Organised by</span>
+                        <strong>Great Run</strong>
+                    </div>
+                </div>
+
+                <div class="event-title-strip">
+                    <h3>Trail Challenge</h3>
+                </div>
+
                 <div class="event-info">
                     <div class="countdown" id="countdown3"></div>
                     <h3>Trail Challenge</h3>
@@ -103,9 +166,25 @@
                     <a href="#" class="btn">Book Now</a>
                 </div>
             </div>
+
             <div class="event-item">
-                <img src="images/featuredevent002.jpg" alt="Event 4">
+                <div class="event-img-wrapper">
+                    <img src="images/featuredevent002.jpg" alt="Event 4">
+                </div>
                 <div class="badge">New</div>
+
+                <div class="event-organiser">
+                    <img src="images/logos/human-race.png" alt="Human Race">
+                    <div class="event-organiser-info">
+                        <span>Organised by</span>
+                        <strong>Human Race</strong>
+                    </div>
+                </div>
+
+                <div class="event-title-strip">
+                    <h3>Windmill Ride</h3>
+                </div>
+
                 <div class="event-info">
                     <div class="countdown" id="countdown4"></div>
                     <h3>Windmill Ride</h3>
@@ -113,8 +192,24 @@
                     <a href="#" class="btn">Book Now</a>
                 </div>
             </div>
+
             <div class="event-item">
-                <img src="images/featuredevent002.jpg" alt="Event 5">
+                <div class="event-img-wrapper">
+                    <img src="images/featuredevent002.jpg" alt="Event 5">
+                </div>
+
+                <div class="event-organiser">
+                    <img src="images/logos/parkrun.png" alt="Parkrun">
+                    <div class="event-organiser-info">
+                        <span>Organised by</span>
+                        <strong>Parkrun</strong>
+                    </div>
+                </div>
+
+                <div class="event-title-strip">
+                    <h3>City Dash</h3>
+                </div>
+
                 <div class="event-info">
                     <div class="countdown" id="countdown5"></div>
                     <h3>City Dash</h3>
@@ -122,16 +217,81 @@
                     <a href="#" class="btn">Book Now</a>
                 </div>
             </div>
+
         </div>
     </div>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Events Inc. | <a href="#">Terms & Conditions</a> | <a href="#">Contact Us</a></p>
+        <div class="footer-inner">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <img src="./images/logo/light/light.png" alt="Logo" class="footer-logo" id="footer-logo">
+                    <p>Discover and book the best sporting events near you. Running, cycling, triathlons and more.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>Explore</h4>
+                    <a href="#">Running Events</a>
+                    <a href="#">Cycling Events</a>
+                    <a href="#">Triathlons</a>
+                    <a href="#">Virtual Events</a>
+                    <a href="#">Events Near Me</a>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>Organisers</h4>
+                    <a href="#">List Your Event</a>
+                    <a href="#">Organiser Dashboard</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Partner With Us</a>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact Us</a>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4>Support</h4>
+                    <a href="#">Help Centre</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Refund Policy</a>
+                    <a href="#">Accessibility</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Events Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms &amp; Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Legal Notice</a>
+                </div>
+            </div>
+
+        </div>
     </footer>
 
     <script src="script/search-bar-calendar.js"></script>
     <script src="script/featured-tiles-coundown.js"></script>
     <script src="script/featured-slideshow.js"></script>
     <script src="script/darkmode.js"></script>
+    <script src="script/sticky-header.js"></script>
 
 </body>
 </html>
